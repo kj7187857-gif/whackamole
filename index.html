@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Whack-a-Mole</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <h1>Whack-a-Mole</h1>
+  <p class="subtitle">Click the moles before they hide!</p>
+
+  <div id="hud">
+    <div class="stat-card">
+      <div class="stat-label">Score</div>
+      <div class="stat-value gold" id="score">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Best</div>
+      <div class="stat-value gold" id="best">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Time</div>
+      <div class="stat-value" id="time">30</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Missed</div>
+      <div class="stat-value red" id="missed">0</div>
+    </div>
+  </div>
+
+  <div id="difficulty-wrap">
+    Difficulty:
+    <select id="diff-select">
+      <option value="easy">Easy</option>
+      <option value="medium" selected>Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+  </div>
+
+  <div id="timer-bar-wrap">
+    <div id="timer-bar"></div>
+  </div>
+
+  <div id="grid"></div>
+
+  <div id="msg">Press Start to play!</div>
+  <button id="btn">Start Game</button>
+
+  <div id="legend">
+    <div class="legend-item">🐹🐭🐾 Hit = +10pts</div>
+    <div class="legend-item">💣 Bomb = -5pts</div>
+  </div>
+
+  <div id="overlay" class="hidden">
+    <div id="result-card">
+      <div id="result-emoji">🎉</div>
+      <div id="result-title">Time's up!</div>
+      <div id="result-score">0</div>
+      <div id="result-body">Loading...</div>
+      <button id="play-again-btn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="js/game.js"></script>
+</body>
+</html>
