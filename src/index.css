@@ -1,0 +1,78 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #1a0a2e;
+  --surface: #2d1b4e;
+  --surface2: #3d2860;
+  --accent: #f7c948;
+  --accent-shadow: #b8941a;
+  --accent2: #ff6b6b;
+  --green: #4ecb71;
+  --text: #f0eaff;
+  --text-muted: #a88fd4;
+  --hole-bg: #120720;
+  --hole-rim: #4a2d7a;
+  --radius: 16px;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Gradient glow */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, #3d1a6e55 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, #1a0a5e55 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Stars */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, #ffffff44, transparent),
+    radial-gradient(1px 1px at 30% 40%, #ffffff33, transparent),
+    radial-gradient(1px 1px at 55% 10%, #ffffff44, transparent),
+    radial-gradient(1px 1px at 75% 60%, #ffffff33, transparent),
+    radial-gradient(1px 1px at 90% 25%, #ffffff44, transparent),
+    radial-gradient(1px 1px at 15% 75%, #ffffff22, transparent),
+    radial-gradient(1px 1px at 45% 85%, #ffffff33, transparent),
+    radial-gradient(1px 1px at 65% 35%, #ffffff22, transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Score pop floating label */
+.score-pop {
+  position: fixed;
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  pointer-events: none;
+  z-index: 100;
+  animation: float-up 0.8s ease-out forwards;
+}
+
+@keyframes float-up {
+  0%   { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-60px) scale(1.3); }
+}
